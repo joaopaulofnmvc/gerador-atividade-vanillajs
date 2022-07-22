@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+      integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header class="bar-tools">
+      <div class="bar-tools__column-content">
+        <h2 class="bar-tools__title">Selecionar Fonte</h2>
+
+        <select class="bar-tools__select" name="fonts" id="">
+          <option value="Arial">Arial</option>
+          <option value="Montserrat">Montserrat</option>
+          <option value="Open Sans">Open Sans</option>
+          <option value="Nunito">Nunito</option>
+        </select>
+      </div>
+      <div class="bar-tools__column-content">
+        <h2 class="bar-tools__title">Tamanho Fonte</h2>
+        <select class="bar-tools__select" name="fonts" id="">
+          <option value="12">12</option>
+          <option value="14">14</option>
+          <option value="16">16</option>
+          <option value="18">18</option>
+          <option value="20">20</option>
+          <option value="22">18</option>
+          <option value="24">24</option>
+          <option value="26">26</option>
+          <option value="28">28</option>
+          <option value="30">30</option>
+        </select>
+      </div>
+      <div class="bar-tools__column-content">
+        <h2 class="bar-tools__title">Estilos de Texto</h2>
+        <div>
+          <i class="fas fa-bold fa-lg"></i>
+          <i class="fas fa-italic fa-lg"></i>
+          <i class="fas fa-underline fa-lg"></i>
+        </div>
+      </div>
+
+      <div class="bar-tools__column-content">
+        <h2 class="bar-tools__title">Alinhamento</h2>
+        <div>
+          <i text-h1 class="fas fa-lg fa-align-center"></i>
+          <i text-h1 class="fas fa-lg fa-align-left"></i>
+          <i text-h1 class="fas fa-lg fa-align-right"></i>
+          <i text-h1 class="fas fa-lg fa-align-justify"></i>
+        </div>
+      </div>
+
+      <div class="bar-tools__column-content">
+        <h2 class="bar-tools__title">Inserir</h2>
+        <div>
+          <i class="fas fa-image fa-lg"></i>
+          <i class="fas fa-link fa-lg"></i>
+        </div>
+      </div>
+
+      <div class="bar-tools__column-content">
+        <h2 class="bar-tools__title">Salvar/Imprimir</h2>
+        <i id="pdfBtn" class="fas fa-file-pdf fa-lg"></i>
+        <i class="fas fa-file-word fa-lg"></i>
+        <i id="printerBtn" class="fas fa-print fa-lg"></i>
+      </div>
+    </header>
+    <div hidden id="finalContent">
+      <div class="final-content"></div>
+    </div>
+
+    <div id="containerPages">
+      <div class="page">
+        <div class="page__content" page="1" contenteditable="true">
+          <p>Insira seu Texto....</p>
+          <p>
+            <img
+              src="https://i.pinimg.com/originals/2d/aa/3a/2daa3a9d0099486784e14da60b1e5003.jpg"
+              alt=""
+            />
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.min.js"></script>
+    <script src="scripts/Tools.js"></script>
+    <script src="scripts/Page.js"></script>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
