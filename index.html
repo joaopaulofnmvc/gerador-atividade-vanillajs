@@ -75,24 +75,23 @@
         <i id="printerBtn" class="fas fa-print fa-lg"></i>
       </div>
     </header>
-    <div hidden id="finalContent">
-      <div class="final-content"></div>
-    </div>
+    <div hidden id="finalContent"></div>
 
-    <div id="containerPages">
-      <div class="page">
+    <main id="containerPages">
+      <section class="page">
         <div class="page__content" page="1" contenteditable="true">
+          <h1>Titulo....</h1>
           <p>Insira seu Texto....</p>
           <p>
-            <img
-              src="https://i.pinimg.com/originals/2d/aa/3a/2daa3a9d0099486784e14da60b1e5003.jpg"
-              alt=""
-            />
+            <img src="assets/images/teste.jpg" alt="imagem" />
           </p>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <script src="scripts/Tools.js"></script>
     <script src="scripts/Page.js"></script>
     <script src="scripts/main.js"></script>

@@ -76,9 +76,9 @@ i {
 img {
   display: block;
   padding-right: 4px;
+  max-width: 100%;
 }
-p,
-div {
+.page__content > * {
   position: relative;
   padding-right: 4px;
 }

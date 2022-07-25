@@ -23,7 +23,7 @@ class Page {
   // Event listeners
   init() {
     // this.onClickContainerPage();
-    this.onKeyPresspPageContent();
+    this.onKeyPressPageContent();
   }
 
   //   onClickContainerPage() {
@@ -31,10 +31,10 @@ class Page {
   //       this.tools.boldCommand();
   //     });
   //   }
-  onKeyPresspPageContent() {
+  onKeyPressPageContent() {
     this.pageContent.addEventListener("keypress", (e) => {
-      let selection = this.getWindowSelection(); //pega o elemento selecionado pelo mouse
-      let range = selection.getRangeAt(0);
+      // let selection = this.getWindowSelection(); //pega o elemento selecionado pelo mouse
+      // let range = selection.getRangeAt(0);
 
       // if (e.keyCode == 9) {
       //   // tab key
@@ -52,57 +52,58 @@ class Page {
       //   selection.addRange(range);
       // }
 
-      let activeElement = document.activeElement; //qual elemento que o cursor esta
-
-      let containerPage = activeElement.parentNode;
-      let lastChild = activeElement.lastChild.previousSibling; //ultimo filho adicionado em page
-      let bottomElementFinalChild = lastChild.offsetTop;
-
-      let paddingValuePageContainer = Number(
-        getComputedStyle(containerPage)
-          .getPropertyValue("padding-top")
-          .replace("px", "")
-      );
-
-      let heightPageContainerWithoutPadding =
-        containerPage.clientHeight - paddingValuePageContainer * 2;
-
-      console.log(bottomElementFinalChild);
-      console.log(
-        "Height of pageContainer:" + heightPageContainerWithoutPadding
-      );
-
-      if (bottomElementFinalChild > heightPageContainerWithoutPadding) {
-        if (!this.hasElementNextPage(containerPage)) {
-          this.createNewPage();
-        } else {
-          let currentPageNum = Number(activeElement.getAttribute("page"));
-          console.log(currentPageNum);
-          let nextPage = getPageByNum(currentPageNum + 1);
-          console.log(nextPage);
-          // setElToNextPage(nextPage, lastChild);
-          // setFocusToPage(nextPage);
-        }
-      } else {
-      }
-
-      if (e.keyCode == 8) {
-        let childsNum = activeElement.childNodes.length;
-
-        if (childsNum == 0) {
-          this.removePage(containerPage);
-        }
-      }
+      this.verifyFinalContentPage();
+      this.verifyPageBackspacePressed(e.keyCode);
     });
   }
+  verifyFinalContentPage() {
+    let activeElement = document.activeElement; //qual elemento que o cursor esta
 
+    let containerPage = activeElement.parentNode;
+    let lastChild = activeElement.lastChild.previousSibling; //ultimo filho adicionado em page
+    let bottomElementFinalChild = lastChild.offsetTop;
+
+    let paddingValuePageContainer = Number(
+      getComputedStyle(containerPage)
+        .getPropertyValue("padding-top")
+        .replace("px", "")
+    );
+
+    let heightPageContainerWithoutPadding =
+      containerPage.clientHeight - paddingValuePageContainer * 2;
+
+    console.log(bottomElementFinalChild);
+    console.log("Height of pageContainer:" + heightPageContainerWithoutPadding);
+    if (bottomElementFinalChild > heightPageContainerWithoutPadding) {
+      if (!this.hasElementNextPage(containerPage)) {
+        this.createNewPage();
+      } else {
+        let currentPageNum = Number(activeElement.getAttribute("page"));
+        console.log(currentPageNum);
+        let nextPage = this.getPageByNum(currentPageNum + 1);
+        console.log(nextPage);
+        // setElToNextPage(nextPage, lastChild);
+        // setFocusToPage(nextPage);
+      }
+    } else {
+    }
+  }
+  verifyPageBackspacePressed(keyCode) {
+    if (keyCode == 8) {
+      let childsNum = activeElement.childNodes.length;
+
+      if (childsNum == 0) {
+        this.removePage(containerPage);
+      }
+    }
+  }
   getWindowSelection() {
     if (window.getSelection) return window.getSelection();
   }
 
   //Functions
   createNewPage() {
-    let pageContainer = document.createElement("div");
+    let pageContainer = document.createElement("section");
     pageContainer.classList.add("page");
 
     let newPage = document.createElement("div");
