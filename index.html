@@ -63,7 +63,8 @@
       <div class="bar-tools__column-content">
         <h2 class="bar-tools__title">Inserir</h2>
         <div>
-          <i class="fas fa-image fa-lg"></i>
+          <label for="uploadImage"><i class="fas fa-image fa-lg"></i></label>
+          <input type="file" name="uploadImage" id="uploadImage" hidden />
           <i class="fas fa-link fa-lg"></i>
         </div>
       </div>
@@ -75,21 +76,57 @@
         <i id="printerBtn" class="fas fa-print fa-lg"></i>
       </div>
     </header>
-    <div hidden id="finalContent"></div>
+    <div hidden id="finalContent">
+      <div class="format-html" id="formatedContent">
+        <h1>Titulo....</h1>
+        <p>Insira seu Texto....</p>
+        <p>
+          <img src="assets/images/teste.jpg" alt="imagem" />
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ad
+          quasi quis suscipit beatae culpa omnis amet obcaecati doloremque
+          voluptatem expedita, error aspernatur qui sapiente nam! Similique quam
+          mollitia unde?Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Facere ad quasi quis suscipit beatae culpa omnis amet obcaecati
+          doloremque voluptatem expedita, error aspernatur qui sapiente nam!
+          Similique quam mollitia unde?
+        </p>
+      </div>
+    </div>
 
     <main id="containerPages">
       <section class="page">
-        <div class="page__content" page="1" contenteditable="true">
+        <div
+          class="page__content"
+          page="1"
+          contenteditable="true"
+          data-gramm="false"
+        >
           <h1>Titulo....</h1>
           <p>Insira seu Texto....</p>
           <p>
             <img src="assets/images/teste.jpg" alt="imagem" />
           </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ad
+            quasi quis suscipit beatae culpa omnis amet obcaecati doloremque
+            voluptatem expedita, error aspernatur qui sapiente nam! Similique
+            quam mollitia unde?Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Facere ad quasi quis suscipit beatae culpa omnis
+            amet obcaecati doloremque voluptatem expedita, error aspernatur qui
+            sapiente nam! Similique quam mollitia unde?
+          </p>
         </div>
       </section>
     </main>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.1/html2pdf.bundle.min.js"
+      integrity="sha512-vDKWohFHe2vkVWXHp3tKvIxxXg0pJxeid5eo+UjdjME3DBFBn2F8yWOE0XmiFcFbXxrEOR1JriWEno5Ckpn15A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <script src="scripts/Tools.js"></script>

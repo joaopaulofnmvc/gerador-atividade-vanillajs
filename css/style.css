@@ -56,13 +56,14 @@ i {
 .page {
   margin: 50px 0px;
   width: 21cm;
-  height: 29.7cm;
+  min-height: 29.7cm;
   border: 3px solid #f3f3f3;
 }
 .page__content {
   word-break: break-all;
   white-space: normal;
   outline: none;
+  tab-size: 4;
 }
 
 .page__content *,
@@ -71,7 +72,15 @@ i {
   max-width: 100%;
   white-space: normal;
 }
-
+.format-html {
+  padding: 20px;
+  max-width: 100%;
+  white-space: normal;
+}
+.format-html > * {
+  margin: 8px 0px;
+  white-space: normal;
+}
 /* //page content */
 img {
   display: block;
@@ -81,6 +90,9 @@ img {
 .page__content > * {
   position: relative;
   padding-right: 4px;
+  word-break: break-all;
+  white-space: normal;
+  margin: 8px 0px;
 }
 
 .page__content > *::after {

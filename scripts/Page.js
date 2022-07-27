@@ -74,19 +74,19 @@ class Page {
 
     console.log(bottomElementFinalChild);
     console.log("Height of pageContainer:" + heightPageContainerWithoutPadding);
-    if (bottomElementFinalChild > heightPageContainerWithoutPadding) {
-      if (!this.hasElementNextPage(containerPage)) {
-        this.createNewPage();
-      } else {
-        let currentPageNum = Number(activeElement.getAttribute("page"));
-        console.log(currentPageNum);
-        let nextPage = this.getPageByNum(currentPageNum + 1);
-        console.log(nextPage);
-        // setElToNextPage(nextPage, lastChild);
-        // setFocusToPage(nextPage);
-      }
-    } else {
-    }
+    // if (bottomElementFinalChild > heightPageContainerWithoutPadding) {
+    //   if (!this.hasElementNextPage(containerPage)) {
+    //     this.createNewPage();
+    //   } else {
+    //     let currentPageNum = Number(activeElement.getAttribute("page"));
+    //     console.log(currentPageNum);
+    //     let nextPage = this.getPageByNum(currentPageNum + 1);
+    //     console.log(nextPage);
+    //     // setElToNextPage(nextPage, lastChild);
+    //     // setFocusToPage(nextPage);
+    //   }
+    // } else {
+    // }
   }
   verifyPageBackspacePressed(keyCode) {
     if (keyCode == 8) {
@@ -121,6 +121,7 @@ class Page {
 
     this.setFocusToPage(newPage);
   }
+
   getLastPageAddInDOM() {
     return this.containerPages.querySelector(".page:nth-last-of-type(1)");
   }
