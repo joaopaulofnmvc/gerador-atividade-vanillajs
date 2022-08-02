@@ -40,10 +40,10 @@ class Page {
       //   // tab key
       //   e.preventDefault();
 
-      //   var editor = e.target;
-      //   var doc = editor.ownerDocument.defaultView;
+      //   let editor = e.target;
+      //   let doc = editor.ownerDocument.defaultView;
 
-      //   var tabNode = document.createTextNode("\u00a0\u00a0\u00a0\u00a0");
+      //   let tabNode = document.createTextNode("\u00a0\u00a0\u00a0\u00a0");
       //   range.insertNode(tabNode);
 
       //   range.setStartAfter(tabNode);

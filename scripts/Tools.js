@@ -105,10 +105,10 @@ class Tools {
   }
 
   async getBase64ImageFromUrl(imageUrl) {
-    var res = await fetch(imageUrl);
-    var blob = await res.blob();
+    let res = await fetch(imageUrl);
+    let blob = await res.blob();
     return new Promise((resolve, reject) => {
-      var reader = new FileReader();
+      let reader = new FileReader();
       reader.addEventListener(
         "load",
         function () {
@@ -124,12 +124,12 @@ class Tools {
   }
 
   // getBase64Image(img) {
-  //   var canvas = document.createElement("canvas");
+  //   let canvas = document.createElement("canvas");
   //   canvas.width = img.width;
   //   canvas.height = img.height;
-  //   var ctx = canvas.getContext("2d");
+  //   let ctx = canvas.getContext("2d");
   //   ctx.drawImage(img, 0, 0);
-  //   var dataURL = canvas.toDataURL("image/png");
+  //   let dataURL = canvas.toDataURL("image/png");
   //   return (dataURL = dataURL.replace(/^data:image\/(png|jpg);base64,/, ""));
   // }
 
@@ -137,7 +137,7 @@ class Tools {
     this.addContentToPrinterContainer();
     let documentConvert = document.getElementById("finalContent");
     // let image = this.convertImageIntoBase64();
-    // var doc = new jsPDF();
+    // let doc = new jsPDF();
     // doc.setFontSize(22);
     // doc.text(20, 20, "This is a title");
 
